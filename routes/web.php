@@ -4,6 +4,10 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+
+route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+
 route::post('/users', [UserController::class, 'store'])->name('users.store');
 
 route::get('/users/create', [UserController::class, 'create'])->name('users.create');
